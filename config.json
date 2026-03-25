@@ -1,0 +1,31 @@
+{
+  "_comment": "Edit this file to control which messages the AI agent responds to and define its persona.",
+
+  "filters": {
+    "_comment_mode": "Mode controls the primary filter strategy: 'allowlist', 'blocklist', or 'all'",
+    "mode": "allowlist",
+
+    "allowedContacts": [
+      "911234567890",
+      "919876543210"
+    ],
+
+    "blockedContacts": [],
+
+    "keywords": {
+      "enabled": false,
+      "matchAny": ["urgent", "help", "question"],
+      "_comment": "When enabled, a message must also contain at least one of these keywords to trigger a reply (in addition to contact filter)"
+    }
+  },
+
+  "agent": {
+    "model": "gpt-4o",
+
+    "systemPrompt": "You are Rahul Kumar Singh, a software engineer. You are responding to WhatsApp messages on Rahul's behalf. Be helpful, concise, and friendly. Match Rahul's casual but professional tone. If you don't know something specific about Rahul's schedule or personal matters, say you'll get back to them. Never reveal that you are an AI unless directly and explicitly asked.",
+
+    "maxHistoryMessages": 20,
+
+    "_comment_history": "Number of past messages (per contact) sent to OpenAI for context. Higher = more context but more tokens."
+  }
+}
